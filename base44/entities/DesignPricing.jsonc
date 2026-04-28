@@ -1,0 +1,93 @@
+{
+  "name": "DesignPricing",
+  "type": "object",
+  "properties": {
+    "design_id": {
+      "type": "string",
+      "description": "Reference to OfficeDesign id"
+    },
+    "design_name": {
+      "type": "string",
+      "description": "Design name for reference"
+    },
+    "base_price_usd": {
+      "type": "number",
+      "description": "Base price USD \u2014 starting point before any additions"
+    },
+    "price_per_director": {
+      "type": "number",
+      "description": "USD added per director"
+    },
+    "price_per_manager": {
+      "type": "number",
+      "description": "USD added per manager"
+    },
+    "price_per_operative": {
+      "type": "number",
+      "description": "USD added per operative"
+    },
+    "price_reception": {
+      "type": "number",
+      "description": "USD added if reception selected"
+    },
+    "price_kitchen": {
+      "type": "number",
+      "description": "USD added if kitchen selected"
+    },
+    "price_dining": {
+      "type": "number",
+      "description": "USD added if dining room selected"
+    },
+    "price_per_meeting_room": {
+      "type": "number",
+      "description": "USD added per meeting room"
+    },
+    "price_per_bathroom": {
+      "type": "number",
+      "description": "USD added per bathroom"
+    },
+    "price_server_room": {
+      "type": "number",
+      "description": "USD added if server room selected"
+    },
+    "price_lounge": {
+      "type": "number",
+      "description": "USD added if lounge selected"
+    },
+    "price_ac": {
+      "type": "number",
+      "description": "USD added if AC selected"
+    },
+    "price_fire_protection": {
+      "type": "number",
+      "description": "USD added if fire protection selected"
+    },
+    "price_it_screens": {
+      "type": "number",
+      "description": "USD added if IT/screens selected"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "design_id",
+    "design_name",
+    "base_price_usd"
+  ],
+  "rls": {
+    "read": {
+      "admin": true
+    },
+    "create": {
+      "admin": true
+    },
+    "update": {
+      "admin": true
+    },
+    "delete": {
+      "admin": true
+    }
+  }
+}

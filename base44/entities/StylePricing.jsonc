@@ -1,0 +1,45 @@
+{
+  "name": "StylePricing",
+  "type": "object",
+  "properties": {
+    "style_key": {
+      "type": "string",
+      "enum": [
+        "modern",
+        "industrial",
+        "classic",
+        "biophilic",
+        "minimalist"
+      ],
+      "description": "Style identifier"
+    },
+    "base_price_per_sqm": {
+      "type": "number",
+      "description": "Base price per square meter in USD"
+    },
+    "pct_design": {
+      "type": "number",
+      "description": "Design & Executive Project percentage"
+    },
+    "pct_construction": {
+      "type": "number",
+      "description": "Construction & Civil Works percentage"
+    },
+    "pct_furniture": {
+      "type": "number",
+      "description": "Furniture & Ergonomics percentage"
+    },
+    "pct_finishes": {
+      "type": "number",
+      "description": "Finishes/acoustic/wallcovering/flooring/blinds percentage"
+    },
+    "pct_electrical": {
+      "type": "number",
+      "description": "Electrical, HVAC & Data percentage"
+    }
+  },
+  "required": [
+    "style_key",
+    "base_price_per_sqm"
+  ]
+}

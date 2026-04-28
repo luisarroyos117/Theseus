@@ -1,0 +1,41 @@
+{
+  "name": "SiteConfig",
+  "type": "object",
+  "properties": {
+    "key": {
+      "type": "string",
+      "description": "Configuration key identifier"
+    },
+    "value": {
+      "type": "string",
+      "description": "Configuration value"
+    },
+    "section": {
+      "type": "string",
+      "enum": [
+        "hero",
+        "general"
+      ],
+      "default": "general",
+      "description": "Section this config belongs to"
+    }
+  },
+  "required": [
+    "key",
+    "value"
+  ],
+  "rls": {
+    "read": {
+      "public": true
+    },
+    "create": {
+      "admin": true
+    },
+    "update": {
+      "admin": true
+    },
+    "delete": {
+      "admin": true
+    }
+  }
+}

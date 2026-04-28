@@ -1,0 +1,92 @@
+{
+  "name": "ClientProject",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "Reference to User id"
+    },
+    "client_name": {
+      "type": "string"
+    },
+    "client_company": {
+      "type": "string"
+    },
+    "design_id": {
+      "type": "string"
+    },
+    "design_name": {
+      "type": "string"
+    },
+    "style": {
+      "type": "string"
+    },
+    "total_investment_usd": {
+      "type": "number"
+    },
+    "total_m2": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "cotizacion",
+        "en_diseno",
+        "en_obra",
+        "entregado"
+      ],
+      "default": "cotizacion"
+    },
+    "status_notes": {
+      "type": "string",
+      "description": "Admin notes about current status"
+    },
+    "progress_pct": {
+      "type": "number",
+      "description": "0-100 progress percentage",
+      "default": 0
+    },
+    "quote_breakdown": {
+      "type": "object"
+    },
+    "team_config": {
+      "type": "object"
+    },
+    "amenities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "corridor": {
+      "type": "string"
+    },
+    "down_payment_usd": {
+      "type": "number"
+    },
+    "monthly_payment_usd": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "user_id",
+    "design_name",
+    "total_investment_usd"
+  ],
+  "rls": {
+    "read": {
+      "authenticated": false,
+      "admin": true,
+      "self": "user_id"
+    },
+    "create": {
+      "authenticated": true
+    },
+    "update": {
+      "admin": true
+    },
+    "delete": {
+      "admin": true
+    }
+  }
+}

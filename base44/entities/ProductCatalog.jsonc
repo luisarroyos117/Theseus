@@ -1,0 +1,53 @@
+{
+  "name": "ProductCatalog",
+  "type": "object",
+  "properties": {
+    "category": {
+      "type": "string",
+      "enum": [
+        "walls",
+        "floors",
+        "ceilings",
+        "furniture",
+        "blinds",
+        "technology",
+        "installations"
+      ],
+      "description": "Product category"
+    },
+    "name_en": {
+      "type": "string",
+      "description": "Product name in English"
+    },
+    "name_es": {
+      "type": "string",
+      "description": "Product name in Spanish"
+    },
+    "description_en": {
+      "type": "string",
+      "description": "Description in English"
+    },
+    "description_es": {
+      "type": "string",
+      "description": "Description in Spanish"
+    },
+    "price_usd": {
+      "type": "number",
+      "description": "Price in USD"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Product image URL"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether product is active"
+    }
+  },
+  "required": [
+    "category",
+    "name_en",
+    "name_es"
+  ]
+}

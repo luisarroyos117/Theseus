@@ -1,0 +1,79 @@
+{
+  "name": "QualityTier",
+  "type": "object",
+  "properties": {
+    "tier_key": {
+      "type": "string",
+      "enum": [
+        "essential",
+        "plus",
+        "premium"
+      ],
+      "description": "Quality tier identifier"
+    },
+    "name_es": {
+      "type": "string",
+      "description": "Tier name in Spanish"
+    },
+    "name_en": {
+      "type": "string",
+      "description": "Tier name in English"
+    },
+    "description_es": {
+      "type": "string",
+      "description": "What's included in Spanish"
+    },
+    "description_en": {
+      "type": "string",
+      "description": "What's included in English"
+    },
+    "price_min_usd": {
+      "type": "number",
+      "description": "Minimum price per m\u00b2 in USD"
+    },
+    "price_max_usd": {
+      "type": "number",
+      "description": "Maximum price per m\u00b2 in USD"
+    },
+    "pct_design": {
+      "type": "number"
+    },
+    "pct_construction": {
+      "type": "number"
+    },
+    "pct_furniture": {
+      "type": "number"
+    },
+    "pct_finishes": {
+      "type": "number"
+    },
+    "pct_electrical": {
+      "type": "number"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "tier_key",
+    "name_es",
+    "name_en",
+    "price_min_usd",
+    "price_max_usd"
+  ],
+  "rls": {
+    "read": {
+      "public": true
+    },
+    "create": {
+      "admin": true
+    },
+    "update": {
+      "admin": true
+    },
+    "delete": {
+      "admin": true
+    }
+  }
+}

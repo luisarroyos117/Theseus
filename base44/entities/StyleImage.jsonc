@@ -1,0 +1,30 @@
+{
+  "name": "StyleImage",
+  "type": "object",
+  "properties": {
+    "style_key": {
+      "type": "string",
+      "enum": [
+        "modern",
+        "industrial",
+        "classic",
+        "biophilic",
+        "minimalist"
+      ]
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Hero image URL"
+    },
+    "alt_en": {
+      "type": "string"
+    },
+    "alt_es": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "style_key",
+    "image_url"
+  ]
+}

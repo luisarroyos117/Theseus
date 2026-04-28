@@ -1,0 +1,99 @@
+{
+  "name": "GeneralPricing",
+  "type": "object",
+  "properties": {
+    "tier_key": {
+      "type": "string",
+      "enum": [
+        "essential",
+        "plus",
+        "premium"
+      ],
+      "description": "Quality tier"
+    },
+    "tier_name_es": {
+      "type": "string"
+    },
+    "tier_name_en": {
+      "type": "string"
+    },
+    "base_price_per_sqm": {
+      "type": "number",
+      "description": "Base price per m\u00b2 in USD"
+    },
+    "price_per_director": {
+      "type": "number",
+      "description": "USD added per director"
+    },
+    "price_per_manager": {
+      "type": "number",
+      "description": "USD added per manager"
+    },
+    "price_per_operative": {
+      "type": "number",
+      "description": "USD added per operative"
+    },
+    "price_per_bathroom": {
+      "type": "number",
+      "description": "USD added per bathroom"
+    },
+    "price_per_meeting_room": {
+      "type": "number",
+      "description": "USD added per meeting room"
+    },
+    "price_reception": {
+      "type": "number",
+      "description": "USD added if reception selected"
+    },
+    "price_kitchen": {
+      "type": "number",
+      "description": "USD added if kitchen selected"
+    },
+    "price_dining": {
+      "type": "number",
+      "description": "USD added if dining room selected"
+    },
+    "price_server_room": {
+      "type": "number",
+      "description": "USD added if server room selected"
+    },
+    "price_lounge": {
+      "type": "number",
+      "description": "USD added if lounge selected"
+    },
+    "price_ac": {
+      "type": "number",
+      "description": "USD added if AC selected"
+    },
+    "price_it_screens": {
+      "type": "number",
+      "description": "USD added if IT/screens selected"
+    },
+    "price_fire_protection": {
+      "type": "number",
+      "description": "USD added if fire protection selected"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "tier_key",
+    "base_price_per_sqm"
+  ],
+  "rls": {
+    "read": {
+      "public": true
+    },
+    "create": {
+      "admin": true
+    },
+    "update": {
+      "admin": true
+    },
+    "delete": {
+      "admin": true
+    }
+  }
+}

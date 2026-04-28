@@ -1,0 +1,115 @@
+{
+  "name": "OfficeDesign",
+  "type": "object",
+  "properties": {
+    "name_en": {
+      "type": "string",
+      "description": "Project name in English"
+    },
+    "name_es": {
+      "type": "string",
+      "description": "Project name in Spanish"
+    },
+    "style_key": {
+      "type": "string",
+      "enum": [
+        "modern",
+        "industrial",
+        "classic",
+        "biophilic",
+        "minimalist"
+      ],
+      "description": "Legacy: single style key for backward compatibility"
+    },
+    "styles": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "modern",
+          "industrial",
+          "classic",
+          "biophilic",
+          "minimalist"
+        ]
+      },
+      "description": "Multiple style keys this design belongs to"
+    },
+    "quality_tiers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "essential",
+          "plus",
+          "premium"
+        ]
+      },
+      "description": "Which quality tiers this design is available in"
+    },
+    "size_min_sqm": {
+      "type": "number",
+      "description": "Minimum size in m\u00b2"
+    },
+    "size_max_sqm": {
+      "type": "number",
+      "description": "Maximum size in m\u00b2"
+    },
+    "price_per_sqm": {
+      "type": "number",
+      "description": "Reference price per m\u00b2 in USD (used for filtering and gallery display)"
+    },
+    "price_from_usd": {
+      "type": "number",
+      "description": "Legacy: starting total price in USD"
+    },
+    "photos": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Up to 6 photo URLs"
+    },
+    "description_en": {
+      "type": "string"
+    },
+    "description_es": {
+      "type": "string"
+    },
+    "included_elements_en": {
+      "type": "string",
+      "description": "One element per line, in English"
+    },
+    "included_elements_es": {
+      "type": "string",
+      "description": "One element per line, in Spanish"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "display_order": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "name_en",
+    "name_es"
+  ],
+  "rls": {
+    "read": {
+      "public": true
+    },
+    "create": {
+      "authenticated": false,
+      "admin": true
+    },
+    "update": {
+      "admin": true
+    },
+    "delete": {
+      "admin": true
+    }
+  }
+}

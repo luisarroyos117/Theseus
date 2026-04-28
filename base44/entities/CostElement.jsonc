@@ -1,0 +1,56 @@
+{
+  "name": "CostElement",
+  "type": "object",
+  "properties": {
+    "tier": {
+      "type": "string",
+      "enum": [
+        "essential",
+        "plus",
+        "premium"
+      ],
+      "description": "Quality tier this element belongs to"
+    },
+    "category": {
+      "type": "string",
+      "description": "Grouping category (e.g. Construcci\u00f3n, Mobiliario)"
+    },
+    "element": {
+      "type": "string",
+      "description": "Element name"
+    },
+    "cost_per_sqm": {
+      "type": "number",
+      "description": "Cost per m\u00b2 in USD"
+    },
+    "sale_per_sqm": {
+      "type": "number",
+      "description": "Sale price per m\u00b2 in USD"
+    },
+    "display_order": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "tier",
+    "category",
+    "element",
+    "cost_per_sqm",
+    "sale_per_sqm"
+  ],
+  "rls": {
+    "read": {
+      "admin": true
+    },
+    "create": {
+      "admin": true
+    },
+    "update": {
+      "admin": true
+    },
+    "delete": {
+      "admin": true
+    }
+  }
+}

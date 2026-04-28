@@ -1,0 +1,50 @@
+{
+  "name": "OfficeStyle",
+  "type": "object",
+  "properties": {
+    "style_key": {
+      "type": "string",
+      "description": "Unique identifier key (lowercase, no spaces)"
+    },
+    "name_es": {
+      "type": "string",
+      "description": "Style name in Spanish"
+    },
+    "name_en": {
+      "type": "string",
+      "description": "Style name in English"
+    },
+    "description_es": {
+      "type": "string",
+      "description": "Description in Spanish"
+    },
+    "description_en": {
+      "type": "string",
+      "description": "Description in English"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether this style appears in gallery filters and can be assigned to new designs"
+    }
+  },
+  "required": [
+    "style_key",
+    "name_es",
+    "name_en"
+  ],
+  "rls": {
+    "read": {
+      "public": true
+    },
+    "create": {
+      "admin": true
+    },
+    "update": {
+      "admin": true
+    },
+    "delete": {
+      "admin": true
+    }
+  }
+}

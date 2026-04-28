@@ -1,0 +1,110 @@
+{
+  "name": "Lead",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "style_chosen": {
+      "type": "string",
+      "enum": [
+        "modern",
+        "industrial",
+        "classic",
+        "biophilic",
+        "minimalist"
+      ]
+    },
+    "total_sqm": {
+      "type": "number"
+    },
+    "estimated_investment_usd": {
+      "type": "number"
+    },
+    "space_mode": {
+      "type": "string",
+      "enum": [
+        "have_space",
+        "looking_for_space"
+      ]
+    },
+    "preferred_corridor": {
+      "type": "string"
+    },
+    "team_directors": {
+      "type": "number",
+      "default": 0
+    },
+    "team_managers": {
+      "type": "number",
+      "default": 0
+    },
+    "team_operatives": {
+      "type": "number",
+      "default": 0
+    },
+    "amenities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Selected amenities"
+    },
+    "selected_products": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Selected product IDs"
+    },
+    "quote_breakdown": {
+      "type": "object",
+      "description": "Full quote breakdown object"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "contacted",
+        "quoted",
+        "closed"
+      ],
+      "default": "new"
+    },
+    "financing_requested": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the client asked about financing"
+    }
+  },
+  "required": [
+    "full_name",
+    "email"
+  ],
+  "rls": {
+    "read": {
+      "authenticated": false,
+      "admin": true,
+      "self": "email"
+    },
+    "create": {
+      "public": true
+    },
+    "update": {
+      "admin": true
+    },
+    "delete": {
+      "admin": true
+    }
+  }
+}
